@@ -63,11 +63,11 @@ osd_sink_pad_buffer_probe (GstPad * pad, GstPadProbeInfo * info,
 
     //ROI for sample video
     vector<Point> vert(5);
-    vert[0] = Point( 840, 8 );
-    vert[1] = Point( 964, 8 );
-    vert[2] = Point( 1000, 120 );
-    vert[3] = Point( 1680, 1076 );
-    vert[4] = Point( 668, 1076 );
+    vert[0] = Point( 904, 610 );
+    vert[1] = Point( 1040, 595 );
+    vert[2] = Point( 1331, 794 );
+    vert[3] = Point( 1626, 1057 );
+    vert[4] = Point( 1074, 1064 );
 
     Point obj_cen;
     int flag;

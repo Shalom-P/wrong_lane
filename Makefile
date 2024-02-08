@@ -3,7 +3,7 @@ ifeq ($(CUDA_VER),)
   $(error "CUDA_VER is not set")
 endif
 
-APP:= bus_lane
+APP:= wrong_lane
 
 CXX:= g++ -std=c++17
 
@@ -41,8 +41,8 @@ LIBS+=  -lopencv_core -lopencv_highgui -lopencv_imgproc -lopencv_imgcodecs -pthr
 
 all: wrong_lane objdets
 
-objdets: yolov3 weights
-bus_lane: $(APP)
+objdets: yolov3 
+wrong_lane: $(APP)
 
 %.o: %.cpp $(INCS) Makefile
 	$(CXX) -c -o $@ $(CFLAGS) $<
@@ -52,9 +52,6 @@ $(APP): $(OBJS) Makefile
 
 yolov3:
 	cd parsers/nvdsinfer_custom_impl_Yolo && $(MAKE)
-
-weights:
-	cd model && wget https://pjreddie.com/media/files/yolov3.weights -N -q --show-progress
 
 clean:
 	rm -rf $(OBJS) $(APP)
